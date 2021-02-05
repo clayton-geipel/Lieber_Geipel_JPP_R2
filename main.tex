@@ -1,0 +1,85 @@
+%\documentclass[conf]{new-aiaa}
+\documentclass[journal]{new-aiaa}
+\usepackage[utf8]{inputenc}
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage[version=4]{mhchem}
+\usepackage{siunitx}
+\usepackage{longtable,tabularx}
+\usepackage{fixfoot}
+
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{upgreek}
+\usepackage{overpic}
+\usepackage{xcolor}
+
+\setlength\LTleft{0pt} 
+
+\makeatletter
+\patchcmd\@fixed@footnote
+  {\protected@xdef\@thefnmark{\csname @#1@fftn@footnote\endcsname}}% search
+  {\protected@xdef\@thefnmark{%
+     \expandafter\@fnsymbol\csname @#1@fftn@footnote\endcsname}}% replace
+  {}{}% success/failure
+\makeatother
+
+\DeclareFixedFootnote{\noteA}{Graduate Research Assistant, Member AIAA}
+\DeclareFixedFootnote{\noteB}{Associate Professor, Associate Fellow AIAA}
+\DeclareFixedFootnote{\noteC}{Professor, Associate Fellow AIAA}
+
+
+\title{Combined PIV-PLIF of High-Speed Cavity-Stabilized Combustion}
+
+\author{Clayton M. Geipel\noteA, Damien A. Lieber\noteA, and Christopher P. Goyne\noteB}
+\affil{University of Virginia, Department of Mechanical and Aerospace Engineering\\Charlottesville, Virginia 22904}
+\author{Andrew D. Cutler\noteC}
+\affil{The George Washington University, Department of Mechanical and Aerospace Engineering\\
+Washington, District of Columbia 20052}
+
+\begin{document}
+
+\maketitle
+
+\input{ch3_abstract.tex}
+
+% \section*{Nomenclature}
+
+% {\renewcommand\arraystretch{1.0}
+% \noindent\begin{longtable*}{@{}l @{\quad=\quad} l@{}}
+
+% $\Phi_g$ & global fuel-air equivalence ratio \\
+% $H$ & cavity height \\
+% $L$ & cavity length \\
+% $M$ & Mach number \\ 
+% $m$ & image magnification \\
+% $Re$ & Reynolds number \\
+% $\Delta t$ & time between PIV acquisitions \\
+% $U_x,\ U_y$ & velocity components \\
+% $U_P,\ U_R$ & velocities conditioned on products and reactants \\
+% $x,\ y$ & coordinates with origin at cavity leading edge \\
+
+%\end{longtable*}}
+
+\input{ch3_intro.tex}
+
+\input{ch3_setup.tex}
+
+\input{ch3_BC1_results.tex}
+
+\input{ch3_flow_chem_interactions.tex}
+
+\input{ch3_ccl.tex}
+
+\section*{Funding sources}
+
+This research is supported by the Air Force Office of Scientific Research award \#FA9550-15-0440 (technical monitor Dr. Chiping Li) and the National Science Foundation award \#1511520 (program officer Dr. Song-Charng Kong). Clayton Geipel was supported by fellowship awards from the Virginia Space Grant Consortium and the Jefferson Scholars Foundation.
+
+\section*{Acknowledgements}
+
+The authors appreciate the assistance of Dr. Robert Rockwell in operating the UVaSCF for the experiments. They also wish to thank Dr. Vladimir Mitkin for his advice concerning the hypothetical combustion cycle.
+
+\bibliography{references}
+
+\end{document}
